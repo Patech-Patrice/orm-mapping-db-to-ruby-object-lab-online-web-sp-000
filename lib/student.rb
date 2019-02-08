@@ -67,7 +67,7 @@ class Student
     WHERE grade = 10
     LIMIT ?
     SQL
-    DB[:conn].execute(sql, input) 
+    DB[:conn].execute(sql, input)
   end
 
 
@@ -78,12 +78,12 @@ class Student
     WHERE grade = 10
     LIMIT 1
     SQL
-    
+
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end.first
   end  
-    
+
 
 
   def save

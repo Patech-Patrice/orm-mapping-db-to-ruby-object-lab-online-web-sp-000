@@ -59,9 +59,3 @@ class Student
   end
 
 end
-
-
-
-
-  
- 

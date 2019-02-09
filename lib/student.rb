@@ -84,14 +84,17 @@ class Student
     end.first
   end
 
-  def self.all_students_in_grade_X(input)
+  def self.all_students_in_grade_X(10)
     sql= <<-SQL
     SELECT *
     FROM students
-    WHERE grade = ?
+    WHERE students.grade = 10
+    LIMIT 1
     SQL
-    DB[:conn].execute(sql)
-    end
+    DB[:conn].execute(sql).collect do |row|
+      self.new_from_db(row)
+    end.first
+  end  
 
   def save
     sql = <<-SQL

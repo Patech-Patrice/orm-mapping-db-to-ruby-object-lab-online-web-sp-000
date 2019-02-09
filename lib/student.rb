@@ -91,7 +91,7 @@ class Student
      WHERE grade = ?
      SQL
    DB[:conn].execute(sql, number)
-    end	  
+    end
 
 
 
